@@ -502,11 +502,11 @@ declare namespace CookBook.RecipeDB {
     interface RecipeForm {
         EntryDate: Serenity.DateEditor;
         Name: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
+        Description: Serenity.TextAreaEditor;
         PrimaryImage: Serenity.StringEditor;
-        Ingredients: Serenity.StringEditor;
-        CookingMethod: Serenity.StringEditor;
-        Recommendations: Serenity.StringEditor;
+        Ingredients: Serenity.TextAreaEditor;
+        CookingMethod: Serenity.TextAreaEditor;
+        Recommendations: Serenity.TextAreaEditor;
     }
     class RecipeForm extends Serenity.PrefixedContext {
         static formKey: string;

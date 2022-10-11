@@ -9,61 +9,61 @@ using System.IO;
 namespace CookBook.RecipeDB
 {
     [ConnectionKey("Default"), Module("RecipeDB"), TableName("[dbo].[Recipes]")]
-    [DisplayName("Recipe"), InstanceName("Recipe")]
+    [DisplayName("Рецепты"), InstanceName("Рецепт")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class RecipeRow : Row<RecipeRow.RowFields>, IIdRow, INameRow
     {
-        [DisplayName("Id"), Identity, IdProperty]
+        [DisplayName("Id"), Identity, IdProperty, Hidden]
         public int? Id
         {
             get => fields.Id[this];
             set => fields.Id[this] = value;
         }
 
-        [DisplayName("Entry Date"), NotNull]
+        [DisplayName("Дата внесения"), NotNull]
         public DateTime? EntryDate
         {
             get => fields.EntryDate[this];
             set => fields.EntryDate[this] = value;
         }
 
-        [DisplayName("Name"), Size(200), NotNull, QuickSearch, NameProperty]
+        [DisplayName("Наименование"), Size(200), NotNull, QuickSearch, NameProperty]
         public string Name
         {
             get => fields.Name[this];
             set => fields.Name[this] = value;
         }
 
-        [DisplayName("Description"), Size(200), NotNull]
+        [DisplayName("Описание"), Size(200), NotNull]
         public string Description
         {
             get => fields.Description[this];
             set => fields.Description[this] = value;
         }
 
-        [DisplayName("Primary Image"), Size(200), NotNull]
+        [DisplayName("Фото"), Size(200), NotNull]
         public string PrimaryImage
         {
             get => fields.PrimaryImage[this];
             set => fields.PrimaryImage[this] = value;
         }
 
-        [DisplayName("Ingredients"), Size(2000), NotNull]
+        [DisplayName("Ингидиенты"), Size(2000), NotNull]
         public string Ingredients
         {
             get => fields.Ingredients[this];
             set => fields.Ingredients[this] = value;
         }
 
-        [DisplayName("Cooking Method"), Size(2000), NotNull]
+        [DisplayName("Приготовление"), Size(2000), NotNull]
         public string CookingMethod
         {
             get => fields.CookingMethod[this];
             set => fields.CookingMethod[this] = value;
         }
 
-        [DisplayName("Recommendations"), Size(200), NotNull]
+        [DisplayName("Рекомендации к приёму"), Size(200), NotNull]
         public string Recommendations
         {
             get => fields.Recommendations[this];

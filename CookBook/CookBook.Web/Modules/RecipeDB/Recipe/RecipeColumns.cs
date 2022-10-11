@@ -14,6 +14,7 @@ namespace CookBook.RecipeDB.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public int Id { get; set; }
+        [Width(150), AlignCenter]
         public DateTime EntryDate { get; set; }
         [EditLink]
         public string Name { get; set; }
@@ -21,6 +22,7 @@ namespace CookBook.RecipeDB.Columns
         public string PrimaryImage { get; set; }
         public string Ingredients { get; set; }
         public string CookingMethod { get; set; }
+        [Width(200), AlignRight]
         public string Recommendations { get; set; }
     }
 }
