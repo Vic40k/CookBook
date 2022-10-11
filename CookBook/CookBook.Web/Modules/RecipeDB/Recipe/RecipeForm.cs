@@ -14,14 +14,14 @@ namespace CookBook.RecipeDB.Forms
     {
         public DateTime EntryDate { get; set; }
         public string Name { get; set; }
-        [TextAreaEditor(Rows = 3)]
+        [TextAreaEditor(Rows = 2)]
         public string Description { get; set; }
         public string PrimaryImage { get; set; }
         [TextAreaEditor(Rows = 8)]
         public string Ingredients { get; set; }
         [TextAreaEditor(Rows = 8)]
         public string CookingMethod { get; set; }
-        [TextAreaEditor(Rows = 8)]
+        [TextAreaEditor(Rows = 2)]
         public string Recommendations { get; set; }
     }
 }
