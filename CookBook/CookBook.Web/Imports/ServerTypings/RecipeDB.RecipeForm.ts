@@ -3,7 +3,7 @@
         EntryDate: Serenity.DateEditor;
         Name: Serenity.StringEditor;
         Description: Serenity.TextAreaEditor;
-        PrimaryImage: Serenity.StringEditor;
+        PrimaryImage: Serenity.ImageUploadEditor;
         Ingredients: Serenity.TextAreaEditor;
         CookingMethod: Serenity.TextAreaEditor;
         Recommendations: Serenity.TextAreaEditor;
@@ -23,12 +23,13 @@
                 var w0 = s.DateEditor;
                 var w1 = s.StringEditor;
                 var w2 = s.TextAreaEditor;
+                var w3 = s.ImageUploadEditor;
 
                 Q.initFormType(RecipeForm, [
                     'EntryDate', w0,
                     'Name', w1,
                     'Description', w2,
-                    'PrimaryImage', w1,
+                    'PrimaryImage', w3,
                     'Ingredients', w2,
                     'CookingMethod', w2,
                     'Recommendations', w2

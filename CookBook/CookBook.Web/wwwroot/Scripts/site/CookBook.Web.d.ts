@@ -503,7 +503,7 @@ declare namespace CookBook.RecipeDB {
         EntryDate: Serenity.DateEditor;
         Name: Serenity.StringEditor;
         Description: Serenity.TextAreaEditor;
-        PrimaryImage: Serenity.StringEditor;
+        PrimaryImage: Serenity.ImageUploadEditor;
         Ingredients: Serenity.TextAreaEditor;
         CookingMethod: Serenity.TextAreaEditor;
         Recommendations: Serenity.TextAreaEditor;

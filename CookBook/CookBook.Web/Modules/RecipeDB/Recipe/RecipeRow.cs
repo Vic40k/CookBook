@@ -42,7 +42,7 @@ namespace CookBook.RecipeDB
             set => fields.Description[this] = value;
         }
 
-        [DisplayName("Фото"), Size(200), NotNull]
+        [DisplayName("Фото"), Size(200), ImageUploadEditor(FilenameFormat = "Recipe/PrimaryImage/RecipePrimaryImage_{0}_{2}")]
         public string PrimaryImage
         {
             get => fields.PrimaryImage[this];
