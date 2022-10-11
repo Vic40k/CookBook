@@ -493,6 +493,75 @@ declare namespace CookBook.Membership {
         Password?: string;
     }
 }
+declare namespace CookBook.RecipeDB {
+    class RecipeColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace CookBook.RecipeDB {
+    interface RecipeForm {
+        EntryDate: Serenity.DateEditor;
+        Name: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        PrimaryImage: Serenity.StringEditor;
+        Ingredients: Serenity.StringEditor;
+        CookingMethod: Serenity.StringEditor;
+        Recommendations: Serenity.StringEditor;
+    }
+    class RecipeForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace CookBook.RecipeDB {
+    interface RecipeRow {
+        Id?: number;
+        EntryDate?: string;
+        Name?: string;
+        Description?: string;
+        PrimaryImage?: string;
+        Ingredients?: string;
+        CookingMethod?: string;
+        Recommendations?: string;
+    }
+    namespace RecipeRow {
+        const idProperty = "Id";
+        const nameProperty = "Name";
+        const localTextPrefix = "RecipeDB.Recipe";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            EntryDate = "EntryDate",
+            Name = "Name",
+            Description = "Description",
+            PrimaryImage = "PrimaryImage",
+            Ingredients = "Ingredients",
+            CookingMethod = "CookingMethod",
+            Recommendations = "Recommendations"
+        }
+    }
+}
+declare namespace CookBook.RecipeDB {
+    namespace RecipeService {
+        const baseUrl = "RecipeDB/Recipe";
+        function Create(request: Serenity.SaveRequest<RecipeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<RecipeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RecipeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RecipeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "RecipeDB/Recipe/Create",
+            Update = "RecipeDB/Recipe/Update",
+            Delete = "RecipeDB/Recipe/Delete",
+            Retrieve = "RecipeDB/Recipe/Retrieve",
+            List = "RecipeDB/Recipe/List"
+        }
+    }
+}
 declare namespace CookBook {
     interface ScriptUserDefinition {
         Username?: string;
@@ -733,6 +802,30 @@ declare namespace CookBook.Membership {
     class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
         protected getFormKey(): string;
         private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace CookBook.RecipeDB {
+    class RecipeDialog extends Serenity.EntityDialog<RecipeRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: RecipeForm;
+    }
+}
+declare namespace CookBook.RecipeDB {
+    class RecipeGrid extends Serenity.EntityGrid<RecipeRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RecipeDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
         constructor(container: JQuery);
     }
 }

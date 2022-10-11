@@ -11,8 +11,9 @@ namespace CookBook.Migrations.DefaultDB
             this.CreateTableWithId32("Recipes", "Id", s => s
                 .WithColumn("EntryDate").AsDateTime().NotNullable()
                 .WithColumn("Name").AsString(200).NotNullable()
-                .WithColumn("Description").AsString(200).NotNullable()
-                .WithColumn("Image").AsBinary().NotNullable()
+                .WithColumn("Description").AsString(200)
+                //.WithColumn("Image").AsBinary().NotNullable()
+                .WithColumn("PrimaryImage").AsString(200)
                 .WithColumn("Ingredients").AsString(2000)
                 .WithColumn("CookingMethod").AsString(2000)
                 .WithColumn("Recommendations").AsString(200));

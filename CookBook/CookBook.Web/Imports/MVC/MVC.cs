@@ -68,6 +68,15 @@ namespace MVC
                     public const string AccountSignUp = "~/Modules/Membership/Account/SignUp/AccountSignUp.cshtml";
                 }
             }
+
+        }
+
+        public static class RecipeDB
+        {
+            public static class Recipe
+            {
+                public const string RecipeIndex = "~/Modules/RecipeDB/Recipe/RecipeIndex.cshtml";
+            }
         }
 
         public static class Shared

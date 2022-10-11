@@ -1,4 +1,4 @@
-﻿{
+{
   "RootNamespace": "CookBook",
   "ServerTypings": {
     "LocalTexts": true
@@ -8,6 +8,19 @@
       "/wwwroot/Scripts/serenity/Serenity.CoreLib*.*"
     ]
   },
+  "Connections": [
+    {
+      "Key": "Default",
+      "Tables": [
+        {
+          "Tablename": "dbo.Recipes",
+          "Identifier": "Recipe",
+          "Module": "RecipeDB",
+          "PermissionKey": "Administration:General"
+        }
+      ]
+    }
+  ],
   "UpgradeInfo": {
     "InitialType": "Community",
     "InitialVersion": "6.0.3.0"
