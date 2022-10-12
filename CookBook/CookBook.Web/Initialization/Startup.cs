@@ -51,8 +51,6 @@ namespace CookBook
                 typeof(IDynamicScriptManager).Assembly,
                 typeof(Startup).Assembly,
                 typeof(Serenity.Extensions.EnvironmentSettings).Assembly,
-                typeof(Serenity.Demo.Northwind.CustomerController).Assembly,
-                typeof(Serenity.Demo.BasicSamples.BasicSamplesController).Assembly,
             }));
 
             services.Configure<ConnectionStringOptions>(Configuration.GetSection(ConnectionStringOptions.SectionKey));
